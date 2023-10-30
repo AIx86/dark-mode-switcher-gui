@@ -1,3 +1,4 @@
+import 'package:dark_mode_switcher_flutter/components/action_button.dart';
 import 'package:dark_mode_switcher_flutter/services/registry_service.dart';
 import 'package:flutter/material.dart';
 
@@ -25,44 +26,11 @@ class Home extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              OutlinedButton(
-                onPressed: _switchToDarkMode,
-                style: OutlinedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                  shape: const ContinuousRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                  ),
-                ),
-                child: const Text('🌑 Dark'),
-              ),
+              ActionButton(callback: _switchToDarkMode, text: '🌑 Dark'),
               const SizedBox(height: 10),
-              OutlinedButton(
-                onPressed: _switchToLightMode,
-                style: OutlinedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                  shape: const ContinuousRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                  ),
-                ),
-                child: const Text('☀ Light'),
-              ),
+              ActionButton(callback: _switchToLightMode, text: '☀ Light'),
               const SizedBox(height: 10),
-              OutlinedButton(
-                onPressed: _switchToFullLightMode,
-                style: OutlinedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                  shape: const ContinuousRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                  ),
-                ),
-                child: const Text('🔆 All Light'),
-              ),
+              ActionButton(callback: _switchToFullLightMode, text: '🔆 All Light'),
             ],
           ),
         ),
