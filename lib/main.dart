@@ -4,33 +4,41 @@ import 'package:dark_mode_switcher_flutter/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 
+import 'screens/error_screen.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await windowManager.ensureInitialized();
-  if (Platform.isWindows) {
-    WindowOptions windowOptions = const WindowOptions(
-      size: Size(350, 450),
-      center: true,
-      backgroundColor: Colors.transparent,
-      skipTaskbar: false,
-      titleBarStyle: TitleBarStyle.normal,
-    );
-    windowManager.waitUntilReadyToShow(windowOptions, () async {
-      await windowManager.show();
-      await windowManager.focus();
-    });
+  if (!Platform.isWindows) {
+    return runApp(const MyApp(errorScreen: true));
   }
 
-  runApp(const MyApp());
+  await windowManager.ensureInitialized();
+  WindowOptions windowOptions = const WindowOptions(
+    size: Size(350, 330),
+    minimumSize: Size(350, 330),
+    maximumSize: Size(350, 330),
+    center: true,
+    skipTaskbar: false,
+    titleBarStyle: TitleBarStyle.normal,
+  );
+  windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.show();
+    await windowManager.focus();
+  });
+
+  runApp(const MyApp(errorScreen: false));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool errorScreen;
 
-  // This widget is the root of your application.
+  const MyApp({super.key, required this.errorScreen});
+
   @override
   Widget build(BuildContext context) {
+    Widget entryScreen = errorScreen ? const ErrorScreen() : const Home();
+
     return MaterialApp(
       title: 'Dark Mode Switcher',
       theme: ThemeData(
@@ -39,8 +47,7 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
-      home: const Home(),
+      home: entryScreen,
     );
   }
 }
-
