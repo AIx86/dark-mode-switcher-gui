@@ -1,3 +1,4 @@
+import 'package:dark_mode_switcher_flutter/settings.dart';
 import 'package:flutter/material.dart';
 
 class ActionButton extends StatelessWidget {
@@ -18,7 +19,10 @@ class ActionButton extends StatelessWidget {
           ),
         ),
       ),
-      child: Text(text),
+      child: Text(
+        text,
+        style: const TextStyle(letterSpacing: Settings.letterSpacing),
+      ),
     );
   }
 }

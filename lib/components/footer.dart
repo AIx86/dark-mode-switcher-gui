@@ -11,12 +11,16 @@ class Footer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          GestureDetector(
-            onTap: () {
-              launchUrl(Uri.https('github.com', '/AIx86/dark-mode-switcher-gui'));
-            },
-            child: Image.asset('assets/images/github-logo.png', width: 20, height: 20),
-          ),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                launchUrl(Uri.https('github.com', '/AIx86/dark-mode-switcher-gui'));
+              },
+              child: Image.asset('assets/images/github-logo.png', width: 20, height: 20),
+            ),
+          )
+
         ],
       ),
     );

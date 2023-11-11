@@ -41,11 +41,11 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Dark Mode Switcher',
+      darkTheme: ThemeData.dark(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       home: entryScreen,
     );

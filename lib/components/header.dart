@@ -1,3 +1,4 @@
+import 'package:dark_mode_switcher_flutter/settings.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -12,19 +13,24 @@ class Header extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            height: 108,
             padding: const EdgeInsets.only(bottom: 8),
             child: const Text(
               '🌓',
-              style: TextStyle(fontSize: 70),
+              style: TextStyle(
+                fontSize: 70,
+                letterSpacing: Settings.letterSpacing,
+              ),
             ),
           ),
-          const Text(
-            'Dark Mode Switcher',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          Container(
+            height: 108,
+            alignment: Alignment.center,
+            child: const Text(
+              'Dark Mode Switcher',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: Settings.letterSpacing),
+              textAlign: TextAlign.end,
             ),
-            textAlign: TextAlign.end,
           ),
         ],
       ),
