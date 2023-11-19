@@ -12,24 +12,22 @@ class Header extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             height: 108,
-            padding: const EdgeInsets.only(bottom: 8),
-            child: const Text(
-              '🌓',
-              style: TextStyle(
-                fontSize: 70,
-                letterSpacing: Settings.letterSpacing,
-              ),
-            ),
+            // padding: const EdgeInsets.only(bottom: 8),
+            child: Image.asset('assets/images/logo.png', width: 70, height: 70),
           ),
           Container(
-            height: 108,
-            alignment: Alignment.center,
+            padding: const EdgeInsets.only(left: 10),
             child: const Text(
               'Dark Mode Switcher',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: Settings.letterSpacing),
-              textAlign: TextAlign.end,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                letterSpacing: Settings.letterSpacing,
+                height: Settings.lineHeight,
+              ),
+              // textAlign: TextAlign.end,
             ),
           ),
         ],

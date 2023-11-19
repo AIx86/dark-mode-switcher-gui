@@ -25,11 +25,23 @@ class MainActionArea extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ActionButton(callback: _switchToDarkMode, text: '🌑 Dark'),
+            ActionButton(
+              callback: _switchToDarkMode,
+              imageName: 'dark_moon.png',
+              text: 'Dark',
+            ),
             const SizedBox(height: 10),
-            ActionButton(callback: _switchToLightMode, text: '☀ Light'),
+            ActionButton(
+              callback: _switchToLightMode,
+              imageName: 'full_moon.png',
+              text: 'Light',
+            ),
             const SizedBox(height: 10),
-            ActionButton(callback: _switchToFullLightMode, text: '🔆 All Light'),
+            ActionButton(
+              callback: _switchToFullLightMode,
+              imageName: 'sun1.png',
+              text: 'All Light',
+            ),
           ],
         ),
       ),
