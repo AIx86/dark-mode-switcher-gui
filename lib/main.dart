@@ -1,10 +1,10 @@
 import 'dart:io';
 
+import 'package:dark_mode_switcher_flutter/screens/error_screen.dart';
 import 'package:dark_mode_switcher_flutter/screens/home.dart';
+import 'package:dark_mode_switcher_flutter/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
-
-import 'screens/error_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,9 +15,9 @@ void main() async {
 
   await windowManager.ensureInitialized();
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(350, 330),
-    minimumSize: Size(350, 330),
-    maximumSize: Size(350, 330),
+    size: Size(Settings.windowWidth, Settings.windowHeight),
+    minimumSize: Size(Settings.windowWidth, Settings.windowHeight),
+    maximumSize: Size(Settings.windowWidth, Settings.windowHeight),
     center: true,
     skipTaskbar: false,
     titleBarStyle: TitleBarStyle.normal,
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
     Widget entryScreen = errorScreen ? const ErrorScreen() : const Home();
 
     return MaterialApp(
-      title: 'Dark Mode Switcher',
+      title: Settings.appName,
       darkTheme: ThemeData.dark(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),

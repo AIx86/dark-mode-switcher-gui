@@ -1,8 +1,8 @@
+import 'package:dark_mode_switcher_flutter/components/footer.dart';
 import 'package:dark_mode_switcher_flutter/components/header.dart';
 import 'package:dark_mode_switcher_flutter/components/main_action_area.dart';
+import 'package:dark_mode_switcher_flutter/settings.dart';
 import 'package:flutter/material.dart';
-
-import '../components/footer.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: SizedBox(
-          width: 350,
+          width: Settings.windowWidth,
           child: Column(
             children: [
               Header(),

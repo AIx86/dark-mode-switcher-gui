@@ -18,7 +18,7 @@ class Header extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(left: 10),
             child: const Text(
-              'Dark Mode Switcher',
+              Settings.appName,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
