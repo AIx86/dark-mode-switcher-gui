@@ -1,16 +1,10 @@
-# dark_mode_switcher_flutter
+# Dark Mode Switcher
 
-A new Flutter project.
+Dark Mode Switcher is a small tool which changes the themes in Windows.
+It is written in Dart with Flutter
 
-## Getting Started
+Current supported OS:  
 
-This project is a starting point for a Flutter application.
+* Windows 10 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot of the UI](/assets/images/github/dark_mode_switcher_demo.png)

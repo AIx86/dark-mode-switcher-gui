@@ -7,14 +7,12 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // padding: const EdgeInsets.only(top: 10, bottom: 10),
       width: MediaQuery.of(context).size.width,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
             height: 108,
-            // padding: const EdgeInsets.only(bottom: 8),
             child: Image.asset('assets/images/logo.png', width: 70, height: 70),
           ),
           Container(
@@ -27,7 +25,6 @@ class Header extends StatelessWidget {
                 letterSpacing: Settings.letterSpacing,
                 height: Settings.lineHeight,
               ),
-              // textAlign: TextAlign.end,
             ),
           ),
         ],
